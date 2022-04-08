@@ -1,15 +1,33 @@
-$(".nav a").click(function(){
-    $( ".nav a").removeClass("active");
-    $(this).addClass("active");
-
-
-    $(window).hashchange(function(){
-        let hash = location.hash;
-        console.log(hash);
-        $("section").hide();
-        $("#"+ hash).show();
+$('document').ready(function(){
+    $("#a").click(function(){
+        $("#b").removeClass("active");
+        $("#c").removeClass("active");
+        $("#a").addClass("active");   
+    });
+    $("#b").click(function(){
+        $("#a").removeClass("active");
+        $("#c").removeClass("active");
+        $("#b").addClass("active");   
+    });
+    $("#c").click(function(){
+        $("#b").removeClass("active");
+        $("#a").removeClass("active");
+        $("#c").addClass("active");  
+    });
+    $(window).on('hashchange', function () {
+        let hash = window.location.hash.substring(1);
+        if(hash=="home"){
+            $("#about").hide();
+            $("#contact").hide();
+        }
+        if(hash=="about"){
+            $("#home").hide();
+            $("#contact").hide();
+        }
+        if(hash=="contact"){
+            $("#about").hide();
+            $("#home").hide();
+        }
+        $("#"+hash).show();
     });
 });
-
-
-

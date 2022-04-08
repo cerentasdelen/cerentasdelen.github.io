@@ -14,6 +14,11 @@ $('document').ready(function(){
         $("#a").removeClass("active");
         $("#c").addClass("active");  
     });
+    $(".btn").click(function(){
+        $("#a").removeClass("active");
+        $("#c").removeClass("active");
+        $("#b").addClass("active");   
+    });
     $(window).on('hashchange', function () {
         let hash = window.location.hash.substring(1);
         if(hash=="home"){

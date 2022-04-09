@@ -17,7 +17,10 @@ $('document').ready(function(){
     $(".btn").click(function(){
         $("#a").removeClass("active");
         $("#c").removeClass("active");
-        $("#b").addClass("active");   
+        $("#b").addClass("active");  
+        $("#home").hide();
+        $("#contact").hide(); 
+        $("#about").show();
     });
     $(window).on('hashchange', function () {
         let hash = window.location.hash.substring(1);
